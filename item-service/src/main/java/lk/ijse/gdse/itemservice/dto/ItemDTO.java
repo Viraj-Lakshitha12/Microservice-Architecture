@@ -12,4 +12,9 @@ public class ItemDTO {
     private String itemName;
     private String unitPrice;
     private String qty;
+
+//    private String id;
+//    private String name;
+//    private String address;
+//    private String salary;
 }
