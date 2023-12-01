@@ -6,10 +6,7 @@ import lk.ijse.gdse.itemservice.entity.Item;
 import lk.ijse.gdse.itemservice.service.ItemService;
 import lk.ijse.gdse.itemservice.util.DataTypeConversion;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 @RestController
@@ -28,7 +25,7 @@ public class ItemController {
         this.dataTypeConversion = dataTypeConversion;
     }
 
-    @PostMapping("/saveItem")
+    @GetMapping("/getUser")
     public String saveData(ItemDTO itemDTO){
 //        itemService.saveData(dataTypeConversion.getItemEntity(itemDTO));
        return  restTemplate.getForObject("http://localhost:8081/api/v1/user/saveUser",String.class);
