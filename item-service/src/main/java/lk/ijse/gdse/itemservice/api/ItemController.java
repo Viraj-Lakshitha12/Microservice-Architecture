@@ -34,9 +34,11 @@ public class ItemController {
     }
 
     @PostMapping("/saveItem1")
-    public String saveData1(@RequestBody ItemDTO itemDTO){
+    public ItemDTO saveData1(@RequestBody ItemDTO itemDTO){
 //        itemService.saveData(dataTypeConversion.getItemEntity(itemDTO));
-        return  restTemplate.postForObject("http://localhost:8081/api/v1/user/saveUser1", itemDTO,String.class);
+        ItemDTO i  = restTemplate.postForObject("http://localhost:8081/api/v1/user/saveUser1", itemDTO, ItemDTO.class);
+        System.out.println("item dto : "+i);
+        return i;
     }
 
 }
